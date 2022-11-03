@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+  jupyter-r:
+    container_name: python-r
+    image: jupyter/r-notebook:latest
+    ports:
+      - "8890:8888"
+    volumes:
+      - ./projetos/:/home/jovyan
+    environment:
+       JUPYTER_ENABLE_LAB: "yes"
+    command: "start-notebook.sh --NotebookApp.token='c239995c45948014e0a721e7d5b2b03c25f1b1d8a8f05764' --NotebookApp.password=''jupyter"
